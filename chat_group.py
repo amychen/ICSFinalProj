@@ -1,6 +1,6 @@
 S_ALONE = 0
 S_TALKING = 1
-
+import Simon as simon
 #==============================================================================
 # Group class:
 # member fields: 
@@ -46,6 +46,8 @@ class Group:
         
     def connect(self, me, peer):
         peer_in_group = False
+        
+        simon.main()
         #if peer is in a group, join it
         peer_in_group, group_key = self.find_group(peer)
         if peer_in_group == True:
@@ -97,14 +99,3 @@ class Group:
                     if member != me:
                         my_list.append(member)
         return my_list
-
-def main():
-    g = Group()
-    g.join('a')
-    g.join('b')
-    g.list_all()
-    g.connect('a', 'b')
-    g.list_all()
-    print(g.list_me('b'))
-    
-main()

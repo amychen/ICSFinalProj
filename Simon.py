@@ -55,7 +55,7 @@ def main():
     waitforPlayer = False
     
     #player is looking to follow Simon
-    while True:
+    while score < 2:
         clicked = None
         DISPLAY.fill((255, 255, 255))
         drawButtons()
@@ -191,8 +191,3 @@ def checkForQuit():
 
 def leave():
     pygame.quit()
-    sys.exit()
-    
-    
-if __name__ == '__main__':
-    main()
